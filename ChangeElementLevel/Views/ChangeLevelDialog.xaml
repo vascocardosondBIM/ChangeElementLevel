@@ -1,0 +1,57 @@
+<Window x:Class="ChangeElementLevel.Views.ChangeLevelDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title=""
+        Height="440" Width="460"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True"
+        Background="Transparent"
+        FontFamily="Segoe UI Variable, Segoe UI">
+  <Border Margin="16" Padding="20" CornerRadius="10"
+          Background="{DynamicResource Dlg.Surface}"
+          BorderBrush="{DynamicResource Dlg.Border}"
+          BorderThickness="1">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <TextBlock x:Name="TitleText" Grid.Row="0" Style="{StaticResource DlgTitleStyle}"/>
+      <TextBlock x:Name="InstructionText" Grid.Row="1" Style="{StaticResource DlgBodyStyle}" Margin="0,0,0,14"/>
+
+      <Border Grid.Row="2" CornerRadius="6" Background="{DynamicResource Dlg.ListBackground}"
+              BorderBrush="{DynamicResource Dlg.ListBorder}" BorderThickness="1" Padding="4" Margin="0,0,0,12">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+          <ListBox x:Name="LevelsList" BorderThickness="0" Background="Transparent"
+                   ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                   SelectionMode="Single">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <StackPanel>
+                  <TextBlock Text="{Binding Title}" FontSize="14" FontWeight="SemiBold"
+                             Foreground="{DynamicResource Dlg.TextPrimary}"/>
+                  <TextBlock Text="{Binding ElevationCaption}" FontSize="12" Margin="0,2,0,0"
+                             Foreground="{DynamicResource Dlg.TextMuted}"/>
+                </StackPanel>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+          </ListBox>
+        </ScrollViewer>
+      </Border>
+
+      <TextBlock x:Name="FootnoteText" Grid.Row="3" Style="{StaticResource DlgMutedStyle}" Margin="0,0,0,16"/>
+
+      <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+        <Button x:Name="OkButton" Width="100" Margin="0,0,10,0" IsDefault="True" Click="OkClick"
+                Style="{StaticResource DlgPrimaryButton}"/>
+        <Button x:Name="CancelButton" Width="100" IsCancel="True" Style="{StaticResource DlgSecondaryButton}"/>
+      </StackPanel>
+    </Grid>
+  </Border>
+</Window>

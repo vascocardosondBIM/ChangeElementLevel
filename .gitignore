@@ -1,0 +1,64 @@
+## Build / .NET
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.pdb
+*.cache
+*.ilk
+*.meta
+project.lock.json
+project.fragment.lock.json
+artifacts/
+**/GeneratedMSBuildEditorConfig.editorconfig
+
+## NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+
+## Visual Studio / MSBuild
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+*.rsuser
+*_wpftmp.csproj
+*.DotSettings.user
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## VS Code (opcional — comenta se quiseres versionar definições da equipa)
+# .vscode/
+
+## Testes
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.trx
+*.coverage
+*.coveragexml
+
+## Windows / macOS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+## Revit / add-in local (caminhos de máquina — não versionar)
+*.addin.bak
+*.local.json
+
+## Outros
+*.log
+*.tmp
+*.temp
+*.swp
+*~

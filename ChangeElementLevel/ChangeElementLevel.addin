@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>ChangeElementLevel</Name>
+    <Assembly>ChangeElementLevel.dll</Assembly>
+    <FullClassName>ChangeElementLevel.App</FullClassName>
+    <ClientId>8F3E2B1A-6C5D-4E4F-9A0B-1C2D3E4F5A6B</ClientId>
+    <VendorId>ChangeElementLevel</VendorId>
+    <VendorDescription>Alteração de nível mantendo posição 3D</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Name>Mudar nível (manter posição 3D)</Name>
+    <Assembly>ChangeElementLevel.dll</Assembly>
+    <AddInId>7E2D1C0B-5A4F-3E2D-1C0B-9A8F7E6D5C4B</AddInId>
+    <FullClassName>ChangeElementLevel.Commands.ChangeLevelPreservePositionCommand</FullClassName>
+    <Text>Mudar nível</Text>
+    <Description>Altera o nível de referência dos elementos selecionados recalculando o offset para manter as mesmas coordenadas 3D.</Description>
+    <VendorId>ChangeElementLevel</VendorId>
+    <VendorDescription>Alteração de nível mantendo posição 3D</VendorDescription>
+  </AddIn>
+</RevitAddIns>

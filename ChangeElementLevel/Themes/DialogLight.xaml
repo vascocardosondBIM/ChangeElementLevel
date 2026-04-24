@@ -1,0 +1,120 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <SolidColorBrush x:Key="Dlg.WindowBackground" Color="#FFF3F3F5"/>
+  <SolidColorBrush x:Key="Dlg.Surface" Color="#FFFFFFFF"/>
+  <SolidColorBrush x:Key="Dlg.SurfaceAlt" Color="#FFF8F8FA"/>
+  <SolidColorBrush x:Key="Dlg.Border" Color="#FFE0E0E6"/>
+  <SolidColorBrush x:Key="Dlg.TextPrimary" Color="#FF1A1A1E"/>
+  <SolidColorBrush x:Key="Dlg.TextSecondary" Color="#FF3C3C45"/>
+  <SolidColorBrush x:Key="Dlg.TextMuted" Color="#FF6B6B78"/>
+  <SolidColorBrush x:Key="Dlg.ListBackground" Color="#FFFFFFFF"/>
+  <SolidColorBrush x:Key="Dlg.ListBorder" Color="#FFD8D8DE"/>
+  <SolidColorBrush x:Key="Dlg.ListItemHover" Color="#FFF0F4FA"/>
+  <SolidColorBrush x:Key="Dlg.ListItemSelected" Color="#FFE8F1FB"/>
+  <SolidColorBrush x:Key="Dlg.ListItemSelectedBorder" Color="#FF0F6CBD"/>
+  <SolidColorBrush x:Key="Dlg.Accent" Color="#FF0F6CBD"/>
+  <SolidColorBrush x:Key="Dlg.AccentHover" Color="#FF0A5599"/>
+  <SolidColorBrush x:Key="Dlg.AccentForeground" Color="#FFFFFFFF"/>
+  <SolidColorBrush x:Key="Dlg.SecondaryBg" Color="#FFFFFFFF"/>
+  <SolidColorBrush x:Key="Dlg.SecondaryBorder" Color="#FFB8B8C2"/>
+  <SolidColorBrush x:Key="Dlg.SecondaryHover" Color="#FFF5F5F7"/>
+
+  <Style x:Key="DlgTitleStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="18"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Foreground" Value="{DynamicResource Dlg.TextPrimary}"/>
+    <Setter Property="Margin" Value="0,0,0,4"/>
+  </Style>
+  <Style x:Key="DlgBodyStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="Foreground" Value="{DynamicResource Dlg.TextSecondary}"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="LineHeight" Value="20"/>
+  </Style>
+  <Style x:Key="DlgMutedStyle" TargetType="TextBlock">
+    <Setter Property="FontSize" Value="11.5"/>
+    <Setter Property="Foreground" Value="{DynamicResource Dlg.TextMuted}"/>
+    <Setter Property="TextWrapping" Value="Wrap"/>
+    <Setter Property="LineHeight" Value="17"/>
+  </Style>
+
+  <Style x:Key="DlgPrimaryButton" TargetType="Button">
+    <Setter Property="Foreground" Value="{DynamicResource Dlg.AccentForeground}"/>
+    <Setter Property="Background" Value="{DynamicResource Dlg.Accent}"/>
+    <Setter Property="BorderThickness" Value="0"/>
+    <Setter Property="Padding" Value="16,8"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="FontWeight" Value="SemiBold"/>
+    <Setter Property="Cursor" Value="Hand"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="bd" Property="Background" Value="{DynamicResource Dlg.AccentHover}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+              <Setter Property="Opacity" Value="0.45"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style x:Key="DlgSecondaryButton" TargetType="Button">
+    <Setter Property="Foreground" Value="{DynamicResource Dlg.TextPrimary}"/>
+    <Setter Property="Background" Value="{DynamicResource Dlg.SecondaryBg}"/>
+    <Setter Property="BorderBrush" Value="{DynamicResource Dlg.SecondaryBorder}"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="Padding" Value="16,8"/>
+    <Setter Property="FontSize" Value="13"/>
+    <Setter Property="Cursor" Value="Hand"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="bd" Property="Background" Value="{DynamicResource Dlg.SecondaryHover}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="ListBoxItem">
+    <Setter Property="Padding" Value="12,10"/>
+    <Setter Property="Margin" Value="0,0,0,2"/>
+    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+    <Setter Property="Background" Value="Transparent"/>
+    <Setter Property="BorderThickness" Value="1"/>
+    <Setter Property="BorderBrush" Value="Transparent"/>
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ListBoxItem">
+          <Border x:Name="ItemBd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4" Padding="{TemplateBinding Padding}">
+            <ContentPresenter/>
+          </Border>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter TargetName="ItemBd" Property="Background" Value="{DynamicResource Dlg.ListItemHover}"/>
+            </Trigger>
+            <Trigger Property="IsSelected" Value="True">
+              <Setter TargetName="ItemBd" Property="Background" Value="{DynamicResource Dlg.ListItemSelected}"/>
+              <Setter TargetName="ItemBd" Property="BorderBrush" Value="{DynamicResource Dlg.ListItemSelectedBorder}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+</ResourceDictionary>
